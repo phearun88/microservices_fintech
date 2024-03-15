@@ -11,7 +11,7 @@ import java.time.LocalDate;
 
 @Data
 public class CustomerDTO {
-    private Long customerId;
+    private String customerId;
     private String name;
     private String email;
     private String mobileNumber;

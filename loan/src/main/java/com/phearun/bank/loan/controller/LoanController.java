@@ -21,31 +21,23 @@ public class LoanController {
 
     @Autowired
     private LoanService loanService;
+
     @Autowired
     private LoanMapper loanMapper;
 
     @PostMapping
-    public ResponseEntity<?> saveLoan(@RequestBody LoanDTO loanDTO){
-      //  Loan loan = loanMapper.toLoan(loanDTO);
-
-        Loan loan = loanService.save(loanMapper.toLoan(loanDTO));
-
+    public ResponseEntity<?> save(@RequestBody LoanDTO dto){
+        Loan loan = loanService.save(loanMapper.toLoan(dto));
         return ResponseEntity.status(HttpStatus.CREATED).body(loan);
-
-       // loan = loanService.save(loan);
-
-      //  return ResponseEntity.ok(loan);
-
     }
 
-
     @GetMapping
-    public ResponseEntity<?> getLoans(){
-        return ResponseEntity.ok(loanService.getLoans());
+    public ResponseEntity<?> list(){
+        return ResponseEntity.ok(loanService.getList());
     }
 
     @GetMapping("{loanId}")
-    public ResponseEntity<?> getCards(@PathVariable Long loanId){
+    public ResponseEntity<?> getLoan(@PathVariable Long loanId){
         return ResponseEntity.ok(loanService.getById(loanId));
     }
 }

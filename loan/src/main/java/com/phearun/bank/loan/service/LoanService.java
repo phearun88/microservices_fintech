@@ -6,10 +6,9 @@ import com.phearun.bank.loan.entity.Loan;
 import java.util.List;
 
 public interface LoanService {
+
     Loan save(Loan loan);
 
-
-    List<Loan> getLoans();
-
+    List<Loan> getList();
     Loan getById(Long id);
 }

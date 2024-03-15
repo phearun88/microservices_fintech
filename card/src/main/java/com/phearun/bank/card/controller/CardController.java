@@ -10,6 +10,7 @@ import com.phearun.bank.card.entity.Card;
 import com.phearun.bank.card.mapper.CardMapper;
 import com.phearun.bank.card.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,17 +24,14 @@ public class CardController {
     private CardMapper cardMapper;
 
     @PostMapping
-    public ResponseEntity<?> saveCard(@RequestBody CardDTO cardDTO){
-        Card card = cardMapper.toCard(cardDTO);
-
-        card = cardService.save(card);
-        return ResponseEntity.ok(card);
-
+    public ResponseEntity<?> save(@RequestBody CardDTO dto){
+        Card loan = cardService.save(cardMapper.toCard(dto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(loan);
     }
 
     @GetMapping
-    public ResponseEntity<?> getCards(){
-        return ResponseEntity.ok(cardService.getCards());
+    public ResponseEntity<?> list(){
+        return ResponseEntity.ok(cardService.getList());
     }
 
     @GetMapping("{cardId}")

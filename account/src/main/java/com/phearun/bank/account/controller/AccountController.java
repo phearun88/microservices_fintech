@@ -18,26 +18,24 @@ import org.springframework.web.bind.annotation.*;
 public class AccountController {
 
     @Autowired
-    private AccountService accountService;
+    private AccountService AccountService;
     @Autowired
-    private AccountMapper accountMapper;
+    private AccountMapper AccountMapper;
 
     @PostMapping
-    public ResponseEntity<?> saveAccount(@RequestBody AccountDTO accountDTO){
-        Account account = accountMapper.toAccount(accountDTO);
-
-        account = accountService.save(account);
-
-        return ResponseEntity.ok(account);
+    public ResponseEntity<?> saveAccount(@RequestBody AccountDTO dto){
+        Account Account = AccountMapper.toAccount(dto);
+        Account = AccountService.save(Account);
+        return ResponseEntity.ok(Account);
     }
 
     @GetMapping
     public ResponseEntity<?> getAccounts(){
-        return ResponseEntity.ok(accountService.getAccounts());
+        return ResponseEntity.ok(AccountService.getAccounts());
     }
 
     @GetMapping("{accountId}")
-    public ResponseEntity<?> getSAccounts(@PathVariable Long accountId){
-        return ResponseEntity.ok(accountService.getById(accountId));
+    public ResponseEntity<?> getAccounts(@PathVariable Long accountId){
+        return ResponseEntity.ok(AccountService.getById(accountId));
     }
 }

@@ -15,5 +15,5 @@ public class AccountDTO {
     private Long customerId;
     private String accountType;
     private String branchAddress;
-    private String createDate;
+    private LocalDate createDate;
 }

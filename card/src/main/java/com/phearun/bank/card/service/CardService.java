@@ -8,7 +8,9 @@ public interface CardService {
     Card save(Card card);
 
 
-    List<Card> getCards();
+    List<Card> getList();
 
     Card getById(Long id);
+
+
 }

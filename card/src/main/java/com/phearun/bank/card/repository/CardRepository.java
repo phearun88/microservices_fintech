@@ -1,7 +1,8 @@
 package com.phearun.bank.card.repository;
 
 import com.phearun.bank.card.entity.Card;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CardRepository extends JpaRepository<Card, Long> {
+public interface CardRepository extends MongoRepository<Card, Long> {
+
 }

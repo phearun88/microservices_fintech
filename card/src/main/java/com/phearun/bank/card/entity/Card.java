@@ -5,23 +5,22 @@
 
 package com.phearun.bank.card.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity
+
+@Document(collection = "cards")
 @Data
 public class Card {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
     private Long customerId;
-    private String cartType;
-    private int totalLimit;
-    private int availableAmount;
+    private String cardNumber;
+    private String cardType;
+    private BigDecimal totalLimit;
+    private BigDecimal amountUsed;
+    private BigDecimal availableAmount;
     private LocalDate createDate;
 }

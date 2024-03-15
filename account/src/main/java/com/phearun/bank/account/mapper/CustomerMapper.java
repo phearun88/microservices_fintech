@@ -14,13 +14,12 @@ import java.time.LocalDate;
 @Component
 public class CustomerMapper {
 
-    public Customer toCustomer(CustomerDTO customerDTO){
+    public Customer toCustomer(CustomerDTO dto) {
         Customer customer = new Customer();
-        customer.setName(customerDTO.getName());
-        customer.setEmail(customerDTO.getEmail());
-        customer.setMobileNumber(customerDTO.getMobileNumber());
-        customer.setCreateDate(LocalDate.parse(customerDTO.getCreateDate()));
-
+        customer.setName(dto.getName());
+        customer.setEmail(dto.getEmail());
+        customer.setMobileNumber(dto.getMobileNumber());
+        customer.setCreateDate(LocalDate.parse(dto.getCreateDate()));
         return customer;
     }
 }

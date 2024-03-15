@@ -15,21 +15,16 @@ import java.time.LocalDate;
 @Component
 public class LoanMapper {
 
-    public Loan toLoan(LoanDTO loanDTO){
+    public Loan toLoan(LoanDTO dto) {
         Loan loan = new Loan();
-        loan.setAmountPaid(loanDTO.getAmountPaid());
-        loan.setCreateDate(loanDTO.getCreateDate());
-        loan.setCustomerId(loanDTO.getCustomerId());
-        loan.setLoanNumber(loanDTO.getLoanNumber());
-        loan.setLoanType(loanDTO.getLoanType());
-        loan.setOutstandingAmount(loanDTO.getOutstandingAmount());
-        loan.setStartDate(loanDTO.getStartDate());
-        loan.setTotalLoan(loanDTO.getTotalLoan());
-
-
-
-
-
+        loan.setAmountPaid(dto.getAmountPaid());
+        loan.setCreateDate(dto.getCreateDate());
+        loan.setCustomerId(dto.getCustomerId());
+        loan.setLoanNumber(dto.getLoanNumber());
+        loan.setLoanType(dto.getLoanType());
+        loan.setOutstandingAmount(dto.getOutstandingAmount());
+        loan.setStartDate(dto.getStartDate());
+        loan.setTotalLoan(dto.getTotalLoan());
         return loan;
     }
 }

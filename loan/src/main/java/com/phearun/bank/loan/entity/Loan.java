@@ -19,14 +19,12 @@ import java.time.LocalDate;
 @Document(collation = "loans")
 @Data
 public class Loan {
-   // @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long loanNumber;
-    private Long customerId;
-    private LocalDate startDate;
-    private String loanType;
-    private BigDecimal totalLoan;
-    private BigDecimal amountPaid;
-    private BigDecimal outstandingAmount;
-    private LocalDate createDate;
+  private Long loanNumber;
+  private Long customerId;
+  private LocalDate startDate;
+  private String loanType;
+  private BigDecimal totalLoan;
+  private BigDecimal amountPaid;
+  private BigDecimal outstandingAmount;
+  private LocalDate createDate;
 }

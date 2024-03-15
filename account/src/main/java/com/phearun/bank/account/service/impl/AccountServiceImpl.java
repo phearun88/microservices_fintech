@@ -14,23 +14,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService{
 	private final AccountRepository AccountRepository;
-	
-	@Override
-	public Account save(Account account) {
 
-		return AccountRepository.save(account);
+	@Override
+	public Account save(Account Account) {
+		return AccountRepository.save(Account);
 	}
 
 	@Override
 	public List<Account> getAccounts() {
-
 		return AccountRepository.findAll();
 	}
 
 	@Override
 	public Account getById(Long id) {
 		return AccountRepository.findById(id).
-				orElseThrow(() ->new RuntimeException("Account not found"));
+				orElseThrow(() -> new RuntimeException("Account not found"));
 	}
 
 }

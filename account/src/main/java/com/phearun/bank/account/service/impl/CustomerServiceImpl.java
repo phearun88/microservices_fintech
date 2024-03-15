@@ -15,23 +15,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CustomerServiceImpl implements CustomerService{
 	private final CustomerRepository customerRepository;
-	
+
 	@Override
 	public Customer save(Customer customer) {
-
 		return customerRepository.save(customer);
 	}
 
 	@Override
 	public List<Customer> getCustomers() {
-
 		return customerRepository.findAll();
 	}
 
 	@Override
 	public Customer getById(Long id) {
+		// TODO Auto-generated method stub
 		return customerRepository.findById(id).
-				orElseThrow(() ->new RuntimeException("Customer not found"));
+				orElseThrow(() -> new RuntimeException("Customer not found"));
 	}
 
 }

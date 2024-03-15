@@ -16,23 +16,13 @@ import java.time.LocalDate;
 @Component
 public class AccountMapper {
 
-    public Account toAccount(AccountDTO accountDTO){
+    public Account toAccount(AccountDTO dto) {
         Account account = new Account();
-        account.setAccountNumber(accountDTO.getAccountNumber());
-        //account.setCustomerId(accountDTO.getCustomerId());
-        account.setAccountType(accountDTO.getAccountType());
-        account.setBranchAddress(accountDTO.getBranchAddress());
-        account.setCreateDate(LocalDate.parse(accountDTO.getCreateDate()));
-
-
-        return account ;
-
-
-//        private Long accountNumber;
-//        private Long AccountId;
-//        private String accountType;
-//        private String branchAddress;
-//        private LocalDate createDate;
-
+        account.setAccountNumber(dto.getAccountNumber());
+        account.setAccountType(dto.getAccountType());
+        account.setBranchAddress(dto.getBranchAddress());
+        account.setCreateDate(dto.getCreateDate());
+        //account.setCustomerId(dto.getCustomerId());
+        return account;
     }
 }
