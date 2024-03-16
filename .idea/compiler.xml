@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="loan" />
+        <module name="configserver" />
         <module name="account" />
       </profile>
       <profile name="Annotation profile for card" enabled="true">
@@ -28,6 +29,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account" options="-parameters" />
       <module name="card" options="-parameters" />
+      <module name="configserver" options="-parameters" />
       <module name="loan" options="-parameters" />
     </option>
   </component>
